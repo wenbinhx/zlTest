@@ -1,0 +1,213 @@
+@import 'variables';
+/*
+*title: 全局重置样式
+*author：赵宇龙
+*/
+body{ font-size: .14rem; padding-top: .44rem;}
+input{ outline: none;}
+
+/*
+*title：头部标题组件样式
+*author：赵宇龙
+*/
+.header{
+  position: fixed; top: 0; z-index: 99; width: 100%;
+  background: $c-191820; color: $c-ffffff; height: .44rem; line-height:.44rem; font-size: .16rem; text-align: center;
+  .prev{
+    position: absolute; left: 0; top: 0; padding: 0 .08rem; font-size: .14rem;
+  }
+  .operate{
+    position: absolute; right: .07rem; top: 0; font-size: .14rem;
+    .confirm{ padding: .05rem;}
+  }
+}
+
+/*
+*title：日历组件样式
+*author：赵宇龙
+*/
+.calendar {
+  margin:auto; width: 100%; min-width:300px; background: $c-ffffff; user-select:none; position: relative;
+  font-family: "PingFang SC","Hiragino Sans GB","STHeiti","Microsoft YaHei","WenQuanYi Micro Hei","sans-serif";
+  .calendar-tools{
+    height: .44rem; line-height: .44rem; color: $c-333333; background: $c-f5f5f5; overflow:hidden;
+    .calendar-prev{
+      width: 14.28571429%; float:left; text-align: center;
+    }
+    .calendar-next{
+      width: 14.28571429%; float:right; text-align: center;
+    }
+    .icon-btn{
+       color: $c-666666; font-size:.14rem;
+    }
+    .calendar-info{
+        margin-top: .04rem; font-size: .16rem; line-height: 1; text-align: center;
+        > div.month{
+          margin:auto; height:.2rem; width:1rem; text-align: center; color:$c-333333; overflow: hidden; position: relative;
+          .month-inner{
+            position: absolute; left:0; top:0; height:2.4rem; transition:top .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+            > span{
+              display: block; font-size: .18rem; line-height: 1; height:.2rem; width:1rem; overflow: hidden; text-align: center;
+            }
+          }
+        }
+        > div.year{
+          font-size: .1rem; line-height: 1; color: $c-999999;
+        }
+    }
+  }
+  table {
+    clear: both; width: 100%; margin-bottom:.1rem; border-collapse: collapse; color: $c-333333;
+  }
+  td {
+    padding:0px 0; width: 14.28571429%; height:.5rem; text-align: center; vertical-align: middle;
+    font-size:.16rem; line-height: 1; cursor: pointer; position: relative; vertical-align: top;
+    &.week{
+      font-size:10px; pointer-events:none !important; cursor: default !important;
+    }
+    &.disabled {
+      color: $c-c5c5c5; pointer-events:none !important; cursor: default !important;
+      div{
+        color: $c-c5c5c5;
+      }
+    }
+    span{
+      display:block; max-width:.4rem; height:.24rem; font-size: .16rem; font-weight:bold; line-height:.24rem; margin:0 auto; border-radius:.02rem;
+    }
+    &:not(.disabled){
+      span.red{
+        color:$c-fb762b;
+      }
+    }
+    &.selected{
+      span{
+        background-color: $c-96b327; color: $c-ffffff;
+        &.red{
+            background-color: $c-fb762b; color: $c-ffffff;
+        }
+        &.red:hover{
+            background-color: $c-fb762b; color: $c-ffffff;
+        }
+      }
+      &:not(.disabled){
+        span.red{
+          color:$c-ffffff;
+        }
+      }
+    }
+    .text{
+      position: absolute; top:.26rem; left:0; right:0; text-align: center; font-size:.1rem; line-height: 1.2; color:#444;
+    }
+    .isGregorianFestival, .isLunarFestival{
+      color: $c-fb762b;
+    }
+  }
+  thead{
+    td {
+      text-transform: uppercase; height:.4rem; vertical-align: middle; font-size:.12rem
+    }
+  }
+  .calendar-years{
+    position: absolute; left:0px; top:0px; right:0px; bottom:0px; background:#fff; display: flex; justify-content: center;
+    align-items: center; flex-wrap:wrap; overflow: auto; transition:all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    opacity: 0; pointer-events: none; transform: translateY(-10px);
+    &.show{
+      opacity: 1; pointer-events: auto; transform: translateY(0px);
+    }
+    .lay-item{
+      width: 25%;
+      span{
+        margin: 0 auto; display: block; width:.6rem; line-height: .3rem; 
+        border-radius: .02rem; text-align:center; color:$c-999999;
+        &.active{
+          background-color: $c-96b327; color: $c-ffffff;
+        }
+      }
+    }
+  }
+}
+
+/*时间业务组件*/
+.time-select{
+  position: fixed; top: 0; bottom: 0; width: 100%; z-index: 100; background: $c-ffffff; transform: translate3d(0, 0, 0);
+  &.slide-enter-active, &.slide-leave-active{
+    transition: all .5s;
+  }
+  &.slide-enter, &.slide-leave-to{
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+/*
+*title：下拉选项框组件样式
+*author：赵宇龙
+*/
+.pop-list{
+  position: fixed; top: .92rem; z-index: 50; width: 100%; bottom: 0; background: rgba(0,0,0,0.4);
+  .hd{
+    position: relative; z-index: 49; display: flex; flex-direction:row;
+    text-align: center; height: .44rem; line-height: .44rem; border-bottom: 1px solid $c-dddddd; color: $c-666666; background: $c-ffffff; vertical-align: middle; font-size: .14rem; box-sizing: border-box;
+    .tab{ 
+      justify-content:center;
+      .delta{
+        display:inline-block; vertical-align: middle; margin-left: .03rem; border-width: .04rem .04rem 0; border-style: solid dashed dashed; border-color: $c-999999 transparent transparent;
+      }
+      &.focus{ 
+        color: $c-8bbf1b;
+        .delta{
+          border-color: $c-8bbf1b transparent transparent;
+        }
+      }
+    }    
+  }
+  .cont{
+    position: relative; z-index: 48; max-height: 2.8rem; overflow: hidden;
+    .cont-data{
+      font-size: 0; background: $c-ffffff;
+      &.slide-enter-active, &.slide-leave-active{
+        transition: all .5s;
+      }
+      &.slide-enter, &.slide-leave-to{
+        opacity: 0;
+      }
+      .item{
+        position: absolute; top: 0; max-height: 2.8rem; overflow: auto;
+        display: inline-block; vertical-align: top; font-size: .14rem; width: 1.25rem; transform: translate3d(0, 0, 0);
+        &.fade-enter-active, &.fade-leave-active{
+          transition: all .5s;
+        }
+        &.fade-enter, &.fade-leave-to{
+          opacity: 0; transform: translate3d(0, 10%, 0);
+        }
+        p{ 
+          padding:0 .1rem; height: .4rem; line-height: .4rem; color: $c-333333;
+          &.focus{ color: $c-8bbf1b; }
+        }
+        &.first{ left: 0;}
+        &.second{ left: 1.25rem;}
+        &.third{ left: 2.5rem;}
+      }
+    }
+  }
+}
+/*
+*title: 搜索组件样式
+*/
+.search-wrapper{
+  position:fixed; top: .44rem; z-index: 99; width: 100%; height: .48rem; background: $c-191820;
+  padding: .08rem .15rem;
+}
+.search{
+  position:relative; width: 100%; height: .32rem; background: $c-eeeeee; border-radius: .16rem;
+  .icon-search{
+    position: absolute; left: .15rem; top: .09rem; font-size: .14rem;
+  }
+  .box{
+    position: absolute; left:.42rem; top: .02rem; font-size:.12rem; width: 2.8rem; height: .28rem; line-height: .28rem; min-width: 1rem;  background: $c-eeeeee;
+  }
+}
+/*
+*title：覆盖cube-ui样式
+*author：赵宇龙
+*/
+.cube-picker-confirm{ color: $c-96b327;}

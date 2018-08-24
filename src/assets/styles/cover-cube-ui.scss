@@ -1,0 +1,50 @@
+@import 'variables';
+// dialog样式
+.cube-dialog .cube-popup-center .cube-popup-content {
+  box-shadow: 6px 8px 5px rgba(0,0,0,0.26);
+  -webkit-box-shadow: 6px 8px 5px rgba(0,0,0,0.26);
+}
+.cube-dialog-btns .cube-dialog-btn {
+  color: #666666;
+}
+.cube-dialog-btns .cube-dialog-btn:active {
+  background-color: #cccccc;
+}
+.cube-dialog-confirm .cube-dialog-btns .cube-dialog-btn.cube-dialog-btn_highlight {
+  background-color: $c-8bbf1b;
+  color: #ffffff;
+}
+.cube-dialog-confirm .cube-dialog-btns .cube-dialog-btn.cube-dialog-btn_highlight:active {
+  background-color: $c-96b327;
+}
+.cube-popup-content .cube-dialog-main {
+  border-radius: 3px;
+}
+.cube-dialog-main .cube-dialog-title {
+  font-size: 18px;
+  font-weight: bolder;
+  line-height: 1.2;
+}
+.cube-dialog-main .cube-dialog-content {
+  word-break: break-all;
+}
+// radio样式
+.cube-radio_selected .cube-radio-ui {
+  background-color: $c-8bbf1b;
+}
+// checkbox样式
+.cube-checkbox_checked .cube-checkbox-ui i {
+  color: $c-8bbf1b;
+}
+// switch样式
+.cube-switch .cube-switch-input:checked+.cube-switch-ui {
+  background-color: $c-8bbf1b;
+  border-color: $c-8bbf1b;
+}
+.cube-btn.zlzk {
+  background-color: #2c2e3b;
+  color: #bdf11b;
+}
+.cube-btn.zlzk:active {
+  background-color: #111111;
+}
