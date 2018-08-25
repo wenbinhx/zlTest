@@ -60,6 +60,11 @@ export default {
     // clickHandler(item, index) {
     //   console.log(item, index)
     // },
+    /**
+     * @Author: wuxuebin
+     * @Date: 2018-08-24 19:20:42
+     * @Desc: 绘制图表
+     */
     renderChart() {
       var data = [{ x: '1', y: 85 }]
       var chart = new F2.Chart({

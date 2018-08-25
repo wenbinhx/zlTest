@@ -60,6 +60,11 @@ export default {
       this.rolling = false
       this._countup.update(val)
     },
+    /**
+     * @Author: wuxuebin
+     * @Date: 2018-08-24 19:21:14
+     * @Desc: 重新渲染
+     */
     refresh(val) {
       if (val && !this.rolling) {
         this.rolling = true

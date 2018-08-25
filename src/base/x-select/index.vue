@@ -43,6 +43,11 @@ export default {
     }
   },
   computed: {
+    /**
+     * @Author: wuxuebin
+     * @Date: 2018-08-24 19:21:39
+     * @Desc: 兼容数组格式
+     */
     adaptOptions() {
       return [this.options.map(item => {
         if (typeof item !== 'object') {

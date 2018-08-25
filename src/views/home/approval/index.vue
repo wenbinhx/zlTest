@@ -1,7 +1,7 @@
 <template>
   <div>
+    <x-header :showBackIcon="false">我的审批</x-header>
     <div class="index-main-content">
-      <zl-header :title="'我的审批'"></zl-header>
       <cube-tab-bar v-model="selectedLabel" showSlider>
         <cube-tab v-for="item in tabs" :label="item.label" :key="item.index">
         </cube-tab>
@@ -17,11 +17,11 @@
 </template>
 
 <script>
-import Header from '@/base/header/header'
+import XHeader from '@/base/x-header'
 export default {
   name: 'home',
   components: {
-    'zl-header': Header
+    XHeader
   },
   data() {
     return {
@@ -43,8 +43,4 @@ export default {
 </script>
 
 <style lang="scss" scope>
-.index-main-content {
-  height: calc(100vh - 1.04rem);
-  overflow-y: auto;
-}
 </style>

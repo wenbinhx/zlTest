@@ -1,7 +1,7 @@
 <template>
   <div>
+    <x-header :showBackIcon="false">工作</x-header>
     <div class="index-main-content">
-      <zl-header :title="'工作'"></zl-header>
       <div>
         我的，天
       </div>
@@ -10,11 +10,11 @@
 </template>
 
 <script>
-import Header from '@/base/header/header'
+import XHeader from '@/base/x-header'
 export default {
   name: 'work',
   components: {
-    'zl-header': Header
+    XHeader
   },
   data() {
     return {
@@ -28,8 +28,4 @@ export default {
 </script>
 
 <style lang="scss" scope>
-.index-main-content {
-  height: calc(100vh - 1.04rem);
-  overflow-y: auto;
-}
 </style>

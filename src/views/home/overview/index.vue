@@ -1,7 +1,7 @@
 <template>
   <div>
+    <x-header :showBackIcon="false">湖南长沙麓谷</x-header>
     <div class="index-main-content">
-      <zl-header :title="'whatup'"></zl-header>
       <cube-tab-bar v-model="selectedLabel">
         <cube-tab v-for="item in tabs" :label="item.label" :key="item.index">
         </cube-tab>
@@ -74,7 +74,7 @@
 </template>
 
 <script>
-import Header from '@/base/header/header'
+import XHeader from '@/base/x-header'
 import XSelect from '@/base/x-select'
 import DeviceSlider from '../deviceSlider'
 import CountUp from '@/components/CountUp'
@@ -83,7 +83,7 @@ import TimeMultipleSelect from '@/components/TimeSelect/TimeMultipleSelect'
 export default {
   name: 'home',
   components: {
-    'zl-header': Header,
+    XHeader,
     XSelect,
     DeviceSlider,
     CountUp,
@@ -126,6 +126,11 @@ export default {
     selectMultiple(time) {
       console.log(time)
     },
+    /**
+     * @Author: wuxuebin
+     * @Date: 2018-08-24 19:19:45
+     * @Desc: 展示选择组件弹窗
+     */
     showPicker() {
       this.pickerWindow.show()
     }
@@ -146,10 +151,6 @@ export default {
 </script>
 
 <style lang="scss" scope>
-.index-main-content {
-  height: calc(100vh - 1.04rem);
-  overflow-y: auto;
-}
 .dividing-zone {
   background-color: #eeeeee;
 }

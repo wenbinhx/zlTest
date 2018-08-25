@@ -1,10 +1,11 @@
 <template>
   <div>
     <div class="index-main-content">
-      <zl-header :title="'消息中心'"></zl-header>
-      <div>
-        消息中心fromZJ
-      </div>
+      <x-header :showBackIcon="false">
+        <div style="color:#bdf11b">
+          消息中心fromZJ
+        </div>
+      </x-header>
     </div>
     <!-- 底部按钮组 -->
     <bottom-menu :activeIndex="3"></bottom-menu>
@@ -12,12 +13,12 @@
 </template>
 
 <script>
-import Header from '@/base/header/header'
+import XHeader from '@/base/x-header'
 import BottomMenu from '../bottomMenu'
 export default {
   name: 'message',
   components: {
-    'zl-header': Header,
+    XHeader,
     BottomMenu
   },
   data() {
@@ -32,8 +33,4 @@ export default {
 </script>
 
 <style lang="scss" scope>
-.index-main-content {
-  height: calc(100vh - 1.04rem);
-  overflow-y: auto;
-}
 </style>
